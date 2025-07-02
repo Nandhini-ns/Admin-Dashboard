@@ -1,0 +1,15 @@
+body{
+   
+    background-color: #D3D9D4;
+    
+}
+
+.card{
+    border-radius: 15px;
+   background-color:#748D92 ;
+}
+.btn{
+    background-color: #124E66;
+    color: #090a0c;
+    font-weight: bold;
+}

@@ -9,35 +9,49 @@
 </head>
 <body>
   <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-gradient-primary">
-    <div class="card shadow-lg d-flex flex-row rounded-5 overflow-hidden" style="max-width: 900px;">
+    <div class="card shadow-lg d-flex flex-row rounded-5 overflow-hidden" style="max-width: 700px;">
       <!-- Left Blue Welcome Section -->
-      <div class="bg-primary text-white d-flex flex-column justify-content-center align-items-center p-5" style="width: 50%;">
+       <!-- background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0') no-repeat center center; -->
+        <!-- Left Welcome Section with image -->
+<div class="d-flex flex-column justify-content-center align-items-center p-4 welcome-section" style="width: 50%;background-color: #bcbab6;">
+  <img src="assest/images.jpg" alt="Welcome Image" class="img-fluid mb-3" style="max-width: 275px;">
+  <h1 class="fw-bold">WELCOME ADMINISTATOR!</h1>
+  <p class="mb-0">You are logged in to the admin dashboard.</p>
+  <small class="text-center mt-3">You’re in full control. Log in and manage everything easily.</small>
+</div>
+
+
+      <!-- <div class="bg- text-white d-flex flex-column justify-content-center align-items-center p-5" style="width: 50%;background-color:#E3AFBC ;">
         <h1 class="fw-bold">WELCOME</h1>
         <p class="mb-0">YOUR HEADLINE NAME</p>
         <small class="text-center mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, dicta.</small>
-      </div>
+      </div> -->
 
       <!-- Right Sign In Form -->
-      <div class="p-5 bg-white" style="width: 50%;">
+      <div class="p-5 bg" style="width: 50%;background-color: #e193a7 ;">
         <h3 class="mb-4 text-dark">Sign in</h3>
         <form id="loginForm">
-          <div class="mb-3 position-relative">
-            <i class="bi bi-person-fill input-icon"></i>
+          <div class="mb-4 position-relative">
+            <label for="username" class="form-label">User Name</label>
+            <i class="bi bi-person-fill input-icon mt-3"></i>
             <input type="text" id="username" class="form-control ps-5" placeholder="User Name" required>
+            <div id="usernameError" class="text-dark small mt-1"></div>
           </div>
-          <div class="mb-3 position-relative">
-            <i class="bi bi-lock-fill input-icon"></i>
+          <div class="mb-4 position-relative">
+             <label for="password" class="form-label">Password</label>
+            <i class="bi bi-lock-fill input-icon mt-3"></i>
             <input type="password" id="password" class="form-control ps-5 pe-5" placeholder="Password" required>
-            <i class="bi bi-eye-fill toggle-password" onclick="togglePassword()"></i>
+            <i class="bi bi-eye-fill toggle-password mt-3" onclick="togglePassword()"></i>
+            <div id="passwordError" class="text-danger small mt-1"></div>
           </div>
           <div class="d-flex justify-content-between mb-3">
             <div><input type="checkbox"> Remember me</div>
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" class="btn btn-primary w-100 mb-3">Sign in</button>
-          <div class="text-center text-muted mb-2">Or</div>
-          <button type="button" class="btn btn-outline-primary w-100 mb-3">Sign in with other</button>
-          <p class="text-center">Don’t have an account? <a href="#">Sign Up</a></p>
+          <button type="submit" class="btn btn-custom w-100 mb-3 mt-4">Sign in</button>
+          <!-- <div class="text-center text-muted mb-2">Or</div>
+          <button type="button" class="btn btn-outline w-100 mb-3">Sign in with other</button> -->
+          <p class="text-center">Don’t have an account? <a href="#" class="custom-link">Sign Up</a></p>
         </form>
       </div>
     </div>
@@ -45,4 +59,4 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+</html>      

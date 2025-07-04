@@ -31,14 +31,20 @@
   border-color: #7a0030;
 }
 
-.btn-outline{
-     background-color: transparent;
-    color: #5d001e;
-    border: 2px solid #5D001E;
-     transition: 0.3s;
-}
 
-.btn-outline:hover {
-  background-color: #5D001E;
-  color: white;
+/* Admin html */
+
+.bb{
+  min-height: 100vh;
+  background-color: ;
+
+}
+ nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+nav.logo-ima{
+  min-width: 25px;
 }

@@ -36,9 +36,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
         passwordError.textContent="Password is required";
         isValid=false;
      }
+     if(isValid){
      if(username==="admin" && password==="123456"){
-        window.location.href="dashboard.html";
+        window.location.href="admin.html";
  } else{
     loginError.textContent="Invalid username or password";
  }
-})
+ }
+});

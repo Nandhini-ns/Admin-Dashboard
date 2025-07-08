@@ -4,187 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard Panel</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- iconscout css -->
-     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- MATERIL CDN -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="bb">
-    <nav>
-        <div class="logo-name">
-            <div class="logo-ima">
-                <img src="assest/gn-logo1.jpg" style="width: 58px;border-radius: 25px;min-width: 45px;object-fit: cover;border-radius: 50%;">
-            </div>
-
-            <span class="logo_na">🌐Global Nexus</span>
-        </div>
-        <div class="menu-items">
-            <ul class="nav-links">
-                <li>
-                    <a href="#">
-                        <i class="uil uil-estate"></i>
-                        <span class="link-name"> Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-files-landscapes"></i>
-                        <span class="link-name">Content</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-chart"></i>
-                        <span class="link-name">Analytics</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="link-name">Linke</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-comments"></i>
-                        <span class="link-name">Comment</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-share"></i>
-                        <span class="link-name">Share</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-signout"></i>
-                        <span class="link-name">Logout</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-moon"></i>
-                        <span class="link-name">Dark Mode</span>
-                    </a>
-                    <div class="mode-toggle">
-                      <span class="switch"></span>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
-
-    <section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-
-            <div class="search-box">
-              <i class="uil uil-search"></i>
-              <input type="text" placeholder="Search here.....">
-
-            </div>
-             <!-- profile image -->
-        </div>
-
-        <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Dashboard</span>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                  <img src="assest/gn-logo1.jpg"  >
+                  <h2 class="text-muted">🌐Global <snap class="danger"> Nexus</snap></h2>
                 </div>
-                <div class="boxes">
-                    <div class="box boxl">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total Likes</span>
-                        <span class="number">50,120</span>
-                    </div>
-                    <div class="box box2">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Comments</span>
-                        <span class="number">20,120</span>
-                    </div>
-                    <div class="box box3">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Total Share</span>
-                        <span class="number">10,120</span>
-                    </div>
-
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
                 </div>
+                 <div class="sidebar">
+                    <a href="#">
+                        <span class="material-icons-sharp">grid_view</span>
+                        <h3>Dashboard</h3>
+                    </a>
+
+                    <a href="#" class="active">
+                        <span class="material-icons-sharp">person_outline</span>
+                        <h3>Customers</h3>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">receipt_long</span>
+                        <h3>Orders</h3>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">insights</span>
+                        <h3>Analytics</h3>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">mail_outline</span>
+                        <h3>Messages</h3>
+                        <span class="message-count">26</span>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">inventory</span>
+                        <h3>Products</h3>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">report_gmailerrorred</span>
+                        <h3>Reports</h3>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">settings</span>
+                        <h3>Settings</h3>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Product</h3>
+                    </a>
+
+                    <a href="#">
+                        <span class="material-icons-sharp">logout</span>
+                        <h3>Logout</h3>
+                    </a>
+
+                 </div>
             </div>
+        </aside>
 
-            <div class="activity">
-                <div class="title">
-                    <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Activity</span>
-                </div>
-
-                <div class="activity-data">
-                    <div class="data names">
-                        <span class="data-title">Name</span>
-                         <span class="data-list">Prem Shahi</span>
-                         <span class="data-list">Deepa Chand</span>
-                         <span class="data-list">Manisha Chand</span>
-                         <span class="data-list">Ganesh Chand</span>
-                         <span class="data-list">Bikash</span>
-                         <span class="data-list">Partima Shahi</span>
-                         <span class="data-list">Man Shahi</span>
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Email</span>
-                        <span class="data-list">premshahi@gmail.com</span>
-                        <span class="data-list">deepachand@gmail.com</span>
-                        <span class="data-list">prakashhai@gmail.com</span>
-                        <span class="data-list">manishachand@gmail.com</span>
-                        <span class="data-list">pratimashhai@gmail.com</span>
-                        <span class="data-list">manshahi@gmail.com</span>
-                        <span class="data-list">ganeshchand@gmail.com</span>
-
-                    </div>
-
-                     <div class="data joined">
-                        <span class="data-title">Joined</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-15</span>
-                      </div>
-
-                        <div class="data type">
-                        <span class="data-title">Type</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        </div>
-
-
-                        <div class="data status">
-                          <span class="data-title">Status</span>
-                          <span class="data-list">Liked</span>
-                          <span class="data-list">Liked</span>
-                          <span class="data-list">Liked</span>
-                          <span class="data-list">Liked</span>
-                          <span class="data-list">Liked</span>
-                          <span class="data-list">Liked</span>
-                          <span class="data-list">Liked</span>
-                        </div>
-
-                </div>
-
-            </div>
-
-        </div>
-      
-    </section>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>
+

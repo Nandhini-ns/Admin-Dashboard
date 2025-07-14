@@ -54,7 +54,7 @@ input[type="checkbox"] {
   box-sizing: border-box;
 }
 
-.bb{
+.body{
  width: 100vw;
  height: 100vw;
  font-family: poppins, sans-serif;
@@ -64,14 +64,26 @@ input[type="checkbox"] {
  overflow-x: hidden;
 }
 
-.container{
+/* .container{
   display: grid;
   width: 96%;
   margin: 0 auto;
   background: rgba(129, 173, 179, 0.829);
   gap:1.8rem;
   grid-template-columns: 14rem auto 23rem;
+} */
+
+.container {
+  display: grid;
+  grid-template-columns: 17rem auto 23rem; /* Increased from 14rem to 17rem */
+  width: 96%;
+  margin: 0 auto;
+  background: rgba(129, 173, 179, 0.829);
+  gap: 1.8rem;
+  margin-left: 100px;
+  
 }
+
 a{
   color:dark;
 }
@@ -80,6 +92,10 @@ a{
   font-weight: 800;
   font-size: 1.8rem;
 } */
+
+.danger {
+  color: #5b2824;
+}
  h2{
   font-size: 1.4rem;
  }
@@ -100,26 +116,32 @@ a{
   background: gray;
  }
 
- .top{
+ /* .top{
   background:white;
-  /* display: flex;
+      display: flex;
   align-items: center; 
-   justify-content: space-between;  */
-   margin-top: 1.4rem;  
- }
-
- .logo{
+     justify-content: space-between; 
+   margin-top: 1.4rem;   
+ } */
+  .top {
   display: flex;
-  gap: 0.8rem;
- } 
+  align-items: center;
+  justify-content: space-between;  /* Or `end` if only right align needed */
+  gap: 2rem;
+  background: white;
+  margin-top: 1.4rem;
+}
 
-  .logo img{
-  width: 2rem;
-  height: 2rem;
-  border-radius: 20px;
-  object-fit: cover;
 
- } 
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;       /* ✅ Makes it a perfect circle */
+  object-fit: cover;        /* ✅ Keeps image aspect ratio */
+  border: 2px solid white;  /* Optional: adds white border */
+  text-align: center;
+}
+
 
  .close{
   display: none;
@@ -141,7 +163,7 @@ a{
 
  .sidebar a{
   display: flex;
-  color:vat(color-info-dark);
+  color:#333;
   margin-left:2rem;
   gap:1rem;
   align-items: center;
@@ -164,7 +186,7 @@ a{
 .sidebar a.active{
   background-color:#fac1d2;
   color: #7a0030;
-  margin-left: 0;
+ 
 }
 
 .sidebar a.active:before{
@@ -192,7 +214,7 @@ a{
   color: white;
   padding: 2px 10px;
   font-size: 11px;
-  border-radius:-1px;
+  border-radius:20px;
 }
 
 /* ====Main==== */
@@ -314,7 +336,7 @@ main{
 .recent-orders{
   margin-top: 2rem;
 }
-h2{
+ .recent-orders h2{
   margin-bottom: 0.8rem;
 }
 .table{
@@ -337,6 +359,11 @@ h2{
   color: #10121b;
 }
 
+.table{
+  border-radius: 1.5rem;
+  overflow: hidden; /* Clip edges */
+}
+
 main table tbody tr:last-child td{
   border: none;
 }
@@ -345,6 +372,127 @@ main a{
   text-align: center;
   display: block;
   margin: 1rem auto; 
-  color:#7a0030;
+  color:#510c27;
+}
+/* ====right==== */
+.right{
+  margin-top: 1.4rem;
+
+}
+.top{
+   display: flex; 
+  justify-content: end;
+  gap: 2rem;
+   background:white;
 }
 
+.top button{
+  display: none;
+}
+
+.theme-toggler{
+  background: rgba(132,139,200,0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.6rem;
+  width:4.2rem ;
+  cursor: pointer;
+  border-radius: 0.4rem;
+}
+
+.theme-toggler span{
+  font-size: 1.2rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme-toggler span.active{
+  background: rgb(81, 130, 139);
+  color: white;
+  border-radius: 0.4rem;
+}
+
+.top .profile{
+  display:flex;
+  gap: 2rem;
+  text-align: right;
+}
+
+/* ===Recent updates===*/
+.recent-updates{
+  margin-top: 1rem;
+}
+
+.recent-orders h2{ 
+  margin-bottom: 0.8rem;
+}
+.update{
+  background: white;
+  padding: 1.8rem;
+  border-radius:2rem ;
+  box-shadow:0 2rem 3rem rgb(54, 121, 127) ;
+  transition: all 300ms ease ;
+}
+.update:hover{
+  box-shadow: none;
+}
+.update{
+ display: grid; 
+ grid-template-columns: 2.6rem auto;
+ gap: 1rem;
+ margin-bottom: 1rem;
+}
+
+/* ===SALES ANALYTICS===*/
+.sales-analytics{
+  margin-top: 2rem;
+}
+.sales-analytics h2{
+  margin-bottom: 0.8rem;
+}
+
+.item{
+   background: white;
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   margin-bottom: 0.7rem;
+   padding: 1.4rem 1.8rem;
+   border-radius: 1.2rem;
+   box-shadow: 0 2rem 3rem #359097;
+   transition: all 300ms ease;
+}
+.item:hover{
+  box-shadow: none;
+}
+.item.right{
+  display: flex;
+  justify-content:space-between;
+  align-items: start;
+  margin: 0;
+  width: 100%;
+}
+.icon{
+  padding: 0.6rem;
+  color: white;
+  border-radius: 50%;
+  background: rgb(56, 83, 165);
+  display:flex;
+}
+.offline.icon{
+  background:rgb(211, 85, 85) ;
+}
+.customers.icon{
+  background: rgb(97, 202, 97);
+}
+.add-product{
+  background-color: transparent;
+  border: 2px dashed rgb(5, 38, 49);
+  color: rgb(10, 61, 78);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}

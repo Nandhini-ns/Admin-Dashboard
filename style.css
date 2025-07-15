@@ -44,7 +44,7 @@ input[type="checkbox"] {
 /* Admin html */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 *{
-  /* margin: 0; */
+  margin: 0; 
   padding: 0;
   outline: 0;
   /* appearance: none; */
@@ -54,15 +54,15 @@ input[type="checkbox"] {
   box-sizing: border-box;
 }
 
-.body{
+/* body{
  width: 100vw;
  height: 100vw;
  font-family: poppins, sans-serif;
  font-size: 0.88rem;
- background-color:  #f6f6f9;
+ background-color:  #111181;
  user-select: none;
  overflow-x: hidden;
-}
+} */
 
 /* .container{
   display: grid;
@@ -78,9 +78,9 @@ input[type="checkbox"] {
   grid-template-columns: 17rem auto 23rem; /* Increased from 14rem to 17rem */
   width: 96%;
   margin: 0 auto;
-  background: rgba(129, 173, 179, 0.829);
-  gap: 1.8rem;
-  margin-left: 100px;
+  /* background: rgba(129, 173, 179, 0.829); */
+  /* gap: 1.8rem; */
+  /* margin-left: 100px; */
   
 }
 
@@ -98,6 +98,7 @@ a{
 }
  h2{
   font-size: 1.4rem;
+  margin-top: 30px;
  }
 
  .profile-photo{
@@ -130,16 +131,19 @@ a{
   gap: 2rem;
   background: white;
   margin-top: 1.4rem;
+  text-align: center;
+   margin-top: -20px; 
 }
 
 
 .logo img {
   width: 70px;
   height: 70px;
-  border-radius: 50%;       /* ✅ Makes it a perfect circle */
-  object-fit: cover;        /* ✅ Keeps image aspect ratio */
-  border: 2px solid white;  /* Optional: adds white border */
+  border-radius: 50%;       
+  object-fit: cover;        
+  border: 2px solid white;  
   text-align: center;
+  
 }
 
 
@@ -164,7 +168,7 @@ a{
  .sidebar a{
   display: flex;
   color:#333;
-  margin-left:2rem;
+  /* margin-left:2rem; */
   gap:1rem;
   align-items: center;
   position: relative;
@@ -202,12 +206,9 @@ a{
 }
 
 .sidebar a:hover{
-  color: #EE4C7C;
+  color: #f4477b;
 }
 
-.sidebar a:hover span{
-  margin-left: 1rem;
-}
 
 .sidebar .message-count{
   background-color: rgb(238, 18, 18);
@@ -244,10 +245,10 @@ main{
 
  .insights>div{
   background: white;
-  padding: 1.8rem;
+  padding: 0.8rem;
   border-radius:2rem ;
   margin-top: 1rem;
-  box-shadow:0 2rem 3rem #64b3b3 ;
+  box-shadow:0 0.3rem 0.4rem  ;
   transition: all 300ms ease;
 }
 
@@ -377,13 +378,14 @@ main a{
 /* ====right==== */
 .right{
   margin-top: 1.4rem;
+  margin-left: 13px;
 
 }
 .top{
    display: flex; 
-  justify-content: end;
+  /* justify-content: end; */
   gap: 2rem;
-   background:white;
+   background:rgb(255, 255, 255);
 }
 
 .top button{
@@ -411,7 +413,7 @@ main a{
 }
 .theme-toggler span.active{
   background: rgb(81, 130, 139);
-  color: white;
+  color: rgb(249, 241, 241);
   border-radius: 0.4rem;
 }
 
@@ -431,9 +433,9 @@ main a{
 }
 .update{
   background: white;
-  padding: 1.8rem;
-  border-radius:2rem ;
-  box-shadow:0 2rem 3rem rgb(54, 121, 127) ;
+  padding: 0.8rem;
+  border-radius:12px ;
+  box-shadow:0 0.3rem 0.4rem  ;
   transition: all 300ms ease ;
 }
 .update:hover{
@@ -462,7 +464,7 @@ main a{
    margin-bottom: 0.7rem;
    padding: 1.4rem 1.8rem;
    border-radius: 1.2rem;
-   box-shadow: 0 2rem 3rem #359097;
+   box-shadow: 0 0.3rem 0.4rem;
    transition: all 300ms ease;
 }
 .item:hover{
@@ -482,11 +484,14 @@ main a{
   background: rgb(56, 83, 165);
   display:flex;
 }
-.offline.icon{
-  background:rgb(211, 85, 85) ;
-}
-.customers.icon{
+ .offline .icon {
+  background: rgb(211, 85, 85);
+} 
+.customers .icon {
   background: rgb(97, 202, 97);
+}
+.online .icon {
+  background: rgb(56, 83, 165); /* optional, already default */
 }
 .add-product{
   background-color: transparent;
@@ -495,4 +500,55 @@ main a{
   display: flex;
   align-items: center;
   justify-content:center;
+  margin-left: -320px;
+ margin-top: -138px;
+ padding: 2.4rem 5.5rem;
+ border-radius: 10px;
+ width: fit-content; 
+ 
 }
+
+.add-product:hover {
+  background-color: rgba(5, 38, 49, 0.05);
+  transform: scale(1.03);
+}
+
+@media screen and (max-width:1200px){
+  .container{
+    width: 94%;
+    grid-template-columns: 7rem auto 23rem;
+  }
+  .logo h2{
+    display: none;
+  }
+  
+  .sidebar h3{
+     display: none;
+  }
+  .sidebar a{
+    width:5.6rem ;
+  }
+  .sidebar a:last-child{
+    position: relative;
+    margin-top: 1.8rem;
+  }
+
+  main .insights{
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  main .recent-order{
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+  }
+  main .recent-order table{
+    width: 83vw;
+  }
+
+}
+
+
+

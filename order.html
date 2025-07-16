@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recent-order</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+ <style>
+     * {
+    margin: 0;
+    padding: 0;
+   
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+} 
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgb(143, 171, 181), rgb(108, 150, 202));
+
+}  
+.form-container {
+  width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-container input[type="text"],[type="number"],
+.form-container select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.form-container button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.form-container button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+ .error {
+  color: red;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: -23px;
+}
+
+  
+</style>
+<body>
+  <div class="form-container">
+    <h2 id="formTitle">Recent-Order</h2>
+    <form id="orderForm">
+      <label>Product Name</label>
+      <input type="text" id="productName" required>
+      <span class="error" id="productNameError"></span> <br><br>
+
+      <label>Product Number</label>
+      <input type="text" id="productNumber" required>
+      <span class="error" id="productNumberError"></span><br><br>
+
+      <label>Payment</label>
+      <input type="number" id="payment" required>
+      <span class="error" id="paymentError"></span><br><br>
+
+      <label>Status</label>
+      <select id="status" required>
+        <option value="">--Select Status--</option>
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <span class="error" id="statusError"></span><br><br>
+
+      <input type="hidden" id="editIndex">
+      <button type="submit">Submit</button>
+     
+    </form>
+  </div>
+<script>
+  const form = document.getElementById("orderForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const productName = document.getElementById("productName").value.trim();
+    const productNumber = document.getElementById("productNumber").value.trim();
+    const payment = document.getElementById("payment").value.trim();
+    const status = document.getElementById("status").value;
+    const editIndex = sessionStorage.getItem("editIndex");
+
+    let valid = true;
+
+    // Validation
+    if (!productName) {
+      document.getElementById("productNameError").textContent = "Product name is required.";
+      valid = false;
+    } else document.getElementById("productNameError").textContent = "";
+
+    if (!productNumber) {
+      document.getElementById("productNumberError").textContent = "Product number is required.";
+      valid = false;
+    } else document.getElementById("productNumberError").textContent = "";
+
+    if (!payment) {
+      document.getElementById("paymentError").textContent = "Payment is required.";
+      valid = false;
+    } else document.getElementById("paymentError").textContent = "";
+
+    if (!status) {
+      document.getElementById("statusError").textContent = "Status is required.";
+      valid = false;
+    } else document.getElementById("statusError").textContent = "";
+
+    if (!valid) return;
+
+    // Step 1: Get data
+    let orders = JSON.parse(sessionStorage.getItem("orders")) || [];
+    const order = { productName, productNumber, payment, status };
+
+    // Step 2: Edit or Add
+    if (editIndex !== null) {
+      orders[editIndex] = order;
+      sessionStorage.removeItem("editIndex");
+    } else {
+      orders.push(order);
+    }
+
+    // Step 3: Save to sessionStorage
+    sessionStorage.setItem("orders", JSON.stringify(orders));
+
+    // Redirect
+    window.location.href = "admin.html";
+  });
+
+  // Pre-fill data if editing
+  window.onload = function () {
+    const editIndex = sessionStorage.getItem("editIndex");
+    if (editIndex !== null) {
+      const orders = JSON.parse(sessionStorage.getItem("orders")) || [];
+      const order = orders[editIndex];
+      if (order) {
+        document.getElementById("productName").value = order.productName;
+        document.getElementById("productNumber").value = order.productNumber;
+        document.getElementById("payment").value = order.payment;
+        document.getElementById("status").value = order.status;
+      }
+    }
+  };
+</script>
+
+
+
+    
+</body>
+</html> 

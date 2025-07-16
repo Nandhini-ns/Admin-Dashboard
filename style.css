@@ -388,9 +388,9 @@ main a{
    background:rgb(255, 255, 255);
 }
 
-.top button{
+/* .top button{
   display: none;
-}
+} */
 
 .theme-toggler{
   background: rgba(132,139,200,0.18);

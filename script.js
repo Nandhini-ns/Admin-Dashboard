@@ -1,119 +1,3 @@
-// // //Toggle password visibility 
-// // function togglePassword(){
-// //     const passwordInput =document.getElementById("password");
-// //     const toggleIcon=document.querySelector(".toggle-password");
-// //     if(passwordInput.type==="password"){
-// //         passwordInput.type="text";
-// //         toggleIcon.classList.remove("bi-eye-fill");
-// //         toggleIcon.classList.add("bi-eye-slash-fill");
-// //     } else{
-// //         passwordInput.type = "password";
-// //         toggleIcon.classList.remove("bi-eye-slash-fill");
-// //         toggleIcon.classList.add("bi-eye-fill");
-// //     }
-
-// // }
-
-// // document.getElementById("loginForm").addEventListener("submit", function(e){
-// //     e.preventDefault();
-
-// //     const username = document.getElementById("username").value.trim();
-// //     const password = document.getElementById("password").value.trim();
-// //     const usernameError=document.getElementById("usernameError");
-// //     const passwordError=document.getElementById("passwordError");
-// //     const loginError= document.getElementById("loginError");
-
-// //     usernameError.textContent="";
-// //     passwordError.textContent="";
-// //     loginError.textContent="";
-
-// //     let isValid=true;
-// //      if(username===""){
-// //         usernameError.textContent="Username is required";
-// //         isValid=false;
-// //      }
-// //      if(password===""){
-// //         passwordError.textContent="Password is required";
-// //         isValid=false;
-// //      }
-// //      if(isValid){
-// //      if(username==="admin" && password==="123456"){
-// //         window.location.href="index.html";
-// //  } else{
-// //     loginError.textContent="Invalid username or password";
-// //  }
-// //  }
-// // });
-
-// // document.addEventListener("DOMContentLoaded", function () {
-// //   const logoutBtn = document.getElementById("logoutBtn");
-// //   if (logoutBtn) {
-// //     logoutBtn.addEventListener("click", function (e) {
-// //       e.preventDefault();
-// //       window.location.href = "index.html"; // Your login file name
-// //     });
-// //   }
-// // });
-
-
-// // Toggle password visibility 
-// function togglePassword(){
-//     const passwordInput = document.getElementById("password");
-//     const toggleIcon = document.querySelector(".toggle-password");
-//     if(passwordInput.type === "password"){
-//         passwordInput.type = "text";
-//         toggleIcon.classList.remove("bi-eye-fill");
-//         toggleIcon.classList.add("bi-eye-slash-fill");
-//     } else {
-//         passwordInput.type = "password";
-//         toggleIcon.classList.remove("bi-eye-slash-fill");
-//         toggleIcon.classList.add("bi-eye-fill");
-//     }
-// }
-
-// // Login validation
-// document.getElementById("loginForm").addEventListener("submit", function(e){
-//     e.preventDefault();
-
-//     const username = document.getElementById("username").value.trim();
-//     const password = document.getElementById("password").value.trim();
-//     const usernameError = document.getElementById("usernameError");
-//     const passwordError = document.getElementById("passwordError");
-//     const loginError = document.getElementById("loginError");
-
-//     usernameError.textContent = "";
-//     passwordError.textContent = "";
-//     loginError.textContent = "";
-
-//     let isValid = true;
-
-//     if (username === "") {
-//         usernameError.textContent = "Username is required";
-//         isValid = false;
-//     }
-//     if (password === "") {
-//         passwordError.textContent = "Password is required";
-//         isValid = false;
-//     }
-
-//     if (isValid) {
-//         if (username === "admin" && password === "123456") {
-//             window.location.href = "admin.html";  // ✅ Go to admin dashboard
-//         } else {
-//             loginError.textContent = "Invalid username or password";
-//         }
-//     }
-// });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const logoutBtn = document.getElementById("logoutBtn");
-//   if (logoutBtn) {
-//     logoutBtn.addEventListener("click", function (e) {
-//       e.preventDefault();
-//       window.location.href = "index.html"; // Replace with your login page filename
-//     });
-//   }
-// });
 
 // Toggle password visibility
 function togglePassword() {
@@ -193,6 +77,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
+   document.querySelector(".theme-toggler").addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme-variables");
+  document.querySelectorAll(".theme-toggler span").forEach((span) =>
+    span.classList.toggle("active")
+  );
+});
 // //order
 
 window.onload = function () {
@@ -212,8 +103,8 @@ window.onload = function () {
         <td>${order.payment}</td>
         <td class="${order.status === 'Pending' ? 'warning' : 'success'}">${order.status}</td>
         <td>
-          <button onclick="editOrder(${index})">Edit</button>
-          <button onclick="deleteOrder(${index})">Delete</button>
+          <button class="btn-edit" onclick="editOrder(${index})">Edit</button>
+          <button class="btn-delete" onclick="deleteOrder(${index})">Delete</button>
         </td>
       `;
       tableBody.appendChild(row);

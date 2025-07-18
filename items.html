@@ -20,7 +20,7 @@
         font-size: 62.5%;
         scroll-behavior: smooth;
         scroll-padding-top:6rem;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     section{
         padding: 2rem 9%;
@@ -100,7 +100,7 @@
         display:flex;
         align-items: center;
         min-height: 100vh;
-        background: url(assest/pinkfruit1.avif) no-repeat;
+        background: url(assets/pinkfruit1.avif) no-repeat;
         background-size: cover;
         background-position: center;
      }
@@ -195,7 +195,7 @@
  }
  .About .row .video-container video{
     width: 100%;
-    border: 1.5rem solid #fff;
+    border: 0.5rem solid #fff;
     border-radius: .5rem;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     height: 100%;
@@ -208,14 +208,59 @@
     background: #fff;
     width: 100%;
     padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
 
  }
  .About .row .content{
     flex: 1 1 40rem;
+  }
+ .About .row .content h3{
+     font-size: 3rem;
+     color: #333;  
  }
-
-
-
+ .About .row .content p{
+     font-size:1.5rem;
+     color: #262525;
+     padding:.5rem 0;
+     padding-top:1rem;  
+     line-height: 1.5;
+ }
+ .icons-container{
+   background: #eee;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   padding-top: 5rem;
+   padding-bottom: 5rem;
+ }
+  .icons-container .icons{
+    background: #fff;
+    border: 1rem solid rgba(0,0,0,.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex: -1 1 25rem;
+  }
+   /* .icons img {
+  width: 60px;        
+  height: 60px;
+  object-fit: contain; 
+  margin-right: 15px;  
+} */
+ .icons-container .icons img{
+  height: 5rem;
+  margin-right: 2rem;
+ }
+ .icons-container .icons h3{
+  color: #333;
+  padding-bottom: .5rem;
+  font-size: 1.5rem;
+ }
+ .icons-container .icons span{
+  color: #555;
+  font-size: 1.3rem;
+ }
 
 
 
@@ -279,7 +324,7 @@
   }
 
   .content h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
   }
 
@@ -292,6 +337,12 @@
     display: inline-block;
     margin-top: 1rem;
   }
+  .icons-container .icons h3{
+  font-size: 2rem;
+ }
+ .icons-container .icons span{
+  font-size: 1.7rem;
+ }
     }
     @media(max-width:450px){
         html{
@@ -336,7 +387,7 @@
       <h1 class="heading"><span>about </span>us</h1> 
       <div class="row">
            <div class="video-container">
-            <video src="assest/about-vid.mp4" loop autoplay muted class="about-img" ></video>
+            <video src="assets/about-vid.mp4" loop autoplay muted class="about-img" ></video>
             <h3>Best Fruit Sellers</h3>
            </div>
            <div class="content">
@@ -346,6 +397,97 @@
              <a href="#" class="btn">Learn More</a>
            </div>
       </div> 
+    </section>
+    <section class="icons-container">
+      <div class="icons">
+        <img src="assets/ic01.png" alt="">
+        <div class="infom">
+          <h3>Free delivery</h3>
+          <span>Easy orders</span>
+        </div>
+      </div>
+
+       <div class="icons">
+         <img src="assets/ic02.png" alt="">
+          <div class="infom">
+            <h3>Freshness Guarantee</h3>
+            <span>Money back within 2 days</span>
+          </div>
+        </div>
+
+        <div class="icons">
+          <img src="assets/ic03.avif" alt="">
+            <div class="infom">
+             <h3>Special Offers</h3>
+             <span>On all orders</span>
+            </div>
+        </div>
+
+        <div class="icons">
+          <img src="assets/ic04.png" alt="">
+            <div class="infom">
+             <h3>Cash on Delivery</h3>
+             <span>UPI, Card & more</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h1 class="heading">latest <span>products</span></h1>
+           <div class="box-container">
+              <div class="box">
+                <span class="discount">-10%</span>
+                  <div class="image">
+                      <img src="assets/mago01.jpg" alt="">
+                         <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                  </div>
+                  <div class="content">
+                    <h3>Miyazaki Mango</h3>
+                      <div class="price"> ₹20,000-<span> ₹2,50,000</span>per kg.</div>
+                  </div>
+              </div>
+                  <div class="box">
+                   <span class="discount">-15%</span>
+                     <div class="image">
+                        <img src="assets/ruby.avif" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Ruby Roman Grapes</h3>
+                      <div class="price"> ₹8,000 -<span>₹10,000</span>per bunch.</div>
+                  </div>
+
+              </div>
+              <div class="box">
+                   <span class="discount">-15%</span>
+                     <div class="image">
+                        <img src="assets/green.avif" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Green Apple</h3>
+                      <div class="price"> ₹8,000 -<span>₹10,000</span>per bunch.</div>
+                  </div>
+
+              </div>
+              
+              
+
+            </div>
+          
+
     </section>
     
 </body>

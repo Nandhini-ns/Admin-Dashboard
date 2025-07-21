@@ -261,15 +261,99 @@
   color: #555;
   font-size: 1.3rem;
  }
+  .products .box-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.products .box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  height: 100%;
+  transition: 0.3s ease;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.products .box .image img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.box:hover .image img {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.box .image {
+  position: relative;
+  overflow: hidden;
+}
+.box .image .icons{
+  position: absolute;
+  bottom: 0; left: 0;right: 0;
+  display: flex;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.box:hover .image .icons {
+  opacity: 1;
+}
+.box .image .icons a{
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  width: 50%;
+  background: palevioletred;
+  color: #fff;
+  text-align: center;
+  flex: 1;
+}
+.box .image .icons .cart-btn{
+  border-left: 1rem solid #fff7;
+  border-right: 1rem solid #fff7;
+  width:100%;
+  flex: 2;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.box .image .icons a:hover{
+   background: #333;
+}
 
 
+.products .box .content {
+  text-align: center;
+  padding-top: 10px;
+}
 
+.products .box .content h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
 
+.products .box .content .price {
+  font-size: 18px;
+  color: green;
+}
+.box {
+  position: relative; /* ADD this */
+}
 
-
-
-
-
+.discount {
+  position: absolute;
+  background: palevioletred;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
 
     @media (max-width:991px){
         html{
@@ -433,12 +517,12 @@
     </section>
 
     <section class="products" id="products">
-        <h1 class="heading">latest <span>products</span></h1>
+        <h1 class="heading"><span>products</span></h1>
            <div class="box-container">
               <div class="box">
-                <span class="discount">-10%</span>
+                <span class="discount">-20%</span>
                   <div class="image">
-                      <img src="assets/mago01.jpg" alt="">
+                      <img src="assets/ma0.png" alt=" Mango">
                          <div class="icons">
                             <a href="#" class="fas fa-heart"></a>
                             <a href="#" class="cart-btn">add to cart</a>
@@ -446,14 +530,14 @@
                           </div>
                   </div>
                   <div class="content">
-                    <h3>Miyazaki Mango</h3>
-                      <div class="price"> ₹20,000-<span> ₹2,50,000</span>per kg.</div>
+                    <h3>Mango</h3>
+                      <div class="price"> ₹150-<span> ₹120</span> per kg.</div>
                   </div>
               </div>
                   <div class="box">
-                   <span class="discount">-15%</span>
+                   <span class="discount">-25%</span>
                      <div class="image">
-                        <img src="assets/ruby.avif" alt="">
+                        <img src="assets/Guava.avif" alt="Guava" >
                           <div class="icons">
                             <a href="#" class="fas fa-heart"></a>
                             <a href="#" class="cart-btn">add to cart</a>
@@ -461,14 +545,14 @@
                           </div>
                       </div>
                   <div class="content">
-                    <h3>Ruby Roman Grapes</h3>
-                      <div class="price"> ₹8,000 -<span>₹10,000</span>per bunch.</div>
+                    <h3>Guava</h3>
+                      <div class="price"> ₹120-<span>₹90</span> per kg.</div>
                   </div>
 
               </div>
               <div class="box">
-                   <span class="discount">-15%</span>
-                     <div class="image">
+                   <span class="discount">-20%</span>
+                     <div class="image aa1">
                         <img src="assets/green.avif" alt="">
                           <div class="icons">
                             <a href="#" class="fas fa-heart"></a>
@@ -478,17 +562,273 @@
                       </div>
                   <div class="content">
                     <h3>Green Apple</h3>
-                      <div class="price"> ₹8,000 -<span>₹10,000</span>per bunch.</div>
+                      <div class="price"> ₹300 -<span>₹240</span> per kg.</div>
                   </div>
 
               </div>
-              
-              
 
-            </div>
+               <div class="box">
+                   <span class="discount">-15%</span>
+                     <div class="image">
+                        <img src="assets/bluebarry.jpg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Bluebarry</h3>
+                      <div class="price"> ₹750 -<span>₹650</span> per kg.</div>
+                  </div>
+
+              </div>
+
+               <div class="box">
+                   <span class="discount">-21%</span>
+                     <div class="image">
+                        <img src="assets/blackberry.jpg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Blackberry</h3>
+                      <div class="price">₹550-<span>₹700</span> per kg.</div>
+                  </div>
+
+              </div>
+                <div class="box">
+                   <span class="discount">-30%</span>
+                     <div class="image">
+                        <img src="assets/banana.jpeg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Banana</h3>
+                      <div class="price"> ₹35 -<span>₹50</span> per kg.</div>
+                  </div>
+
+              </div>
+                <div class="box">
+                   <span class="discount">-20%</span>
+                     <div class="image">
+                        <img src="assets/image22.png" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Avocado</h3>
+                      <div class="price"> ₹300-<span>₹240</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-25%</span>
+                     <div class="image">
+                        <img src="assets/orange.webp" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Orange</h3>
+                      <div class="price"> ₹120 -<span>₹160</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-20%</span>
+                     <div class="image">
+                        <img src="assets/kiwi.jpeg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Kiwi</h3>
+                      <div class="price"> ₹300 -<span>₹240</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-28%</span>
+                     <div class="image">
+                        <img src="assets/red bananas.jpg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Red Banana</h3>
+                      <div class="price"> ₹90 -<span>₹65</span> per dozen.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-25%</span>
+                     <div class="image">
+                        <img src="assets/Papaya.jpeg" alt="Papaya">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Papaya</h3>
+                      <div class="price"> ₹60 -<span>₹45</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-22%</span>
+                     <div class="image">
+                        <img src="assets/Pineapple.jpeg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Pineapple</h3>
+                      <div class="price"> ₹90 -<span>₹70</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-16%</span>
+                     <div class="image">
+                        <img src="assets/pom.jpg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Pomegranate</h3>
+                      <div class="price"> ₹250 -<span>₹210</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-10%</span>
+                     <div class="image">
+                        <img src="assets/strawberry.jpg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>strawberry</h3>
+                      <div class="price"> ₹300 -<span>₹240</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-25%</span>
+                     <div class="image">
+                        <img src="assets/g002.avif" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Grapes</h3>
+                      <div class="price"> ₹100 -<span>₹75</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-20%</span>
+                     <div class="image">
+                        <img src="assets/watermelon.jpg" alt="">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>watermelon</h3>
+                      <div class="price"> ₹35-<span>₹28</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-20%</span>
+                     <div class="image">
+                        <img src="assets/apple.jpg" alt="Apple">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Apple</h3>
+                      <div class="price"> ₹199-<span>₹250</span> per kg.</div>
+                  </div>
+
+              </div>
+
+              <div class="box">
+                   <span class="discount">-20%</span>
+                     <div class="image">
+                        <img src="assets/Dragon fruit.jpeg" alt="Dragon">
+                          <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="cart-btn">add to cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                          </div>
+                      </div>
+                  <div class="content">
+                    <h3>Dragon</h3>
+                      <div class="price"> ₹600 -<span>₹480</span> per kg.</div>
+                  </div>
+
+                </div>            
+             </div>
           
 
     </section>
+
+    <script>
+      window.location(){
+       window.location.href = "admin.html";
+       }
+    </script>
     
 </body>
 </html>

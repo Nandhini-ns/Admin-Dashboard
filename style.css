@@ -499,7 +499,7 @@ main a{
 .online .icon {
   background: rgb(56, 83, 165); /* optional, already default */
 }
-.add-product{
+/* .add-product{
   background-color: transparent;
   border: 2px dashed rgb(5, 38, 49);
   color: rgb(10, 61, 78);
@@ -517,7 +517,7 @@ main a{
 .add-product:hover {
   background-color: rgba(5, 38, 49, 0.05);
   transform: scale(1.03);
-}
+} */
 
 .dark-theme-variables {
   --color-background: #a09f9f;
